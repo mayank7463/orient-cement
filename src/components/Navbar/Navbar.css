@@ -1,0 +1,154 @@
+.navnav {
+    position: sticky;
+    width: 100%;
+    z-index: 12; /* Ensure navbar is above everything */
+    top: 0;
+}
+
+.nav-background {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px; /* Adjust height as needed */
+    background-color: #f2f0f0; /* Background color for sticky bar */
+    z-index: 1; /* Ensure it's above the sidebar */
+    opacity: 1; /* Ensure it's always visible */
+    transition: opacity 0.3s ease;
+}
+
+.pushNav {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 14; /* Ensure sidebar is below navbar background */
+    overflow-y: auto;
+    background: #fff;
+    width: 300px;
+    right: -300px; /* Offscreen initially */
+    padding-left: 20px; /* Add padding on the left */
+    transition: ease-in-out 0.5s;
+}
+
+.closeLevel,
+.openLevel {
+    cursor: pointer;
+    padding: 1em 0.6em; /* Adjusted padding */
+}
+
+.openLevel,
+.closeLevel,
+.pushNav a {
+    padding: 0.6em 0 0.6em 0.6em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.closeLevel,
+.closelevel > i {
+    font-size: 0.8em;
+}
+
+ul.pushNav {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.pushNav a {
+    font-size: 14px;
+    font-family: helvetica, sans-serif;
+    font-weight: 100;
+    color: #2d2c2c;
+    text-decoration: none;
+    position: relative; /* Ensure links are positioned correctly */
+    z-index: 10; /* Ensure links are above the sidebar background */
+}
+
+.pushNavIsOpen {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.js-topPushNav.isOpen,
+.pushNav_level.isOpen {
+    right: 0;
+    background-color: #f2f0f0;
+}
+
+.closeLevel,
+.openLevel {
+    cursor: pointer;
+}
+
+.openLevel,
+.closeLevel,
+.pushNav a {
+    display: block;
+    transition: background 0.4s ease-in-out;
+}
+
+.openLevel:hover,
+.closeLevel:hover,
+.pushNav a:hover {
+    background: #6c6969;
+}
+
+.hdg {
+    background-color: #1e1e24;
+}
+
+.closeLevel,
+.closelevel > i {
+    color: #a5a5a4;
+}
+
+.burger {
+    cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px; /* Adjust height as needed */
+    padding: 0 24px;
+    background: transparent; /* Transparent background to show the fixed nav-background */
+    z-index: 11;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.logo img {
+    max-width: 20vw; /* Adjust the size as needed */
+}
+
+.scrolled .nav-background {
+    opacity: 1; /* Make the background fully opaque when scrolled */
+}
+
+.screen {
+    display: none;
+}
+
+.js-topPushNav.isOpen ~ .screen {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 13;
+}
+@media (max-width: 768px) {
+    .wrapper {
+        z-index: 11;
+    }
+    .logo img {
+        max-width: 50vw; /* Adjust the size as needed */
+    }
+}

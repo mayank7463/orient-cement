@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.marginal{
+    width: 86%;
+    margin: auto;
+ }
+
+ .bg{
+    border:1px solid red;
+ }
+
+.hero{
+   font-family: "Bebas Neue", sans-serif;
+}
